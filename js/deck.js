@@ -63,9 +63,17 @@
     }, delay);
   }
 
+  function applyDelays(slide) {
+    slide.querySelectorAll(".anim").forEach((el) => {
+      const d = parseInt(el.dataset.delay, 10);
+      el.style.animationDelay = (isNaN(d) ? 0 : d) + "ms";
+    });
+  }
+
   function replayElements(slide) {
     slide.classList.remove("play-animations");
     void slide.offsetWidth;
+    applyDelays(slide);
     slide.classList.add("play-animations");
   }
 
@@ -175,6 +183,7 @@
 
   requestAnimationFrame(() => {
     const slide = slides[current];
+    applyDelays(slide);
     slide.classList.add("is-active", "is-entering", "enter-fwd", "play-animations");
     scheduleAmbient(slide);
     setTimeout(() => {

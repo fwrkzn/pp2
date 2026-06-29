@@ -12,56 +12,52 @@
 </head>
 <body>
   <div id="deck" class="deck">
+
     <!-- Slide 1 — Hook -->
     <section class="slide is-active" data-slide="1" data-transition="hook">
       <div class="slide-inner slide-hook">
         <div class="hook-copy">
-          <h1 class="title-xl anim" data-delay="0">Avoir un site ne suffit plus.<br>Il doit convaincre en quelques secondes.</h1>
-          <p class="subtitle anim" data-delay="200">Vous avez déjà un site. Maintenant, l'objectif, c'est qu'il travaille vraiment pour vous : rassurer vite, expliquer clairement, et générer plus de demandes.</p>
+          <span class="kicker anim" data-delay="0">Zerosix · présence en ligne</span>
+          <h1 class="title-xl anim" data-delay="150">Avoir un site ne suffit plus.<br>Il doit convaincre en quelques secondes.</h1>
+          <p class="subtitle anim" data-delay="350">Vous avez déjà un site. L'objectif maintenant : qu'il travaille vraiment pour vous, rassurer vite, expliquer clairement, et générer plus de demandes.</p>
         </div>
         <div class="visual-center">
-          <div class="blur-cards">
-            <div class="blur-card anim" data-delay="900"><span></span><span></span></div>
-            <div class="blur-card anim" data-delay="1100"><span></span></div>
-            <div class="blur-card anim" data-delay="1300"><span></span><span></span></div>
-            <div class="blur-card anim" data-delay="1500"><span></span></div>
-          </div>
-          <div class="search-bar anim" data-delay="700">
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            <span class="search-text">3 secondes pour convaincre</span>
+          <div class="gauge-ring anim anim-scale" data-delay="500">
+            <svg viewBox="0 0 120 120">
+              <circle class="gauge-track" cx="60" cy="60" r="54"/>
+              <circle class="gauge-fill" cx="60" cy="60" r="54"/>
+            </svg>
+            <div class="gauge-center">
+              <strong>3 s</strong>
+              <span>pour convaincre</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Slide 2 — Compris rapidement -->
+    <!-- Slide 2 — Clarté -->
     <section class="slide" data-slide="2" data-transition="timeline">
-      <div class="slide-inner">
-        <h2 class="title anim" data-delay="0">Vos clients doivent comprendre tout de suite<br>ce que vous proposez.</h2>
-        <p class="subtitle anim" data-delay="150">On clarifie votre message pour que le visiteur comprenne en 3 secondes qui vous êtes, ce que vous faites, et pourquoi vous choisir.</p>
-        <div class="timeline">
-          <div class="step-card anim" data-delay="400">
-            <div class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <div class="slide-inner split-visual">
+        <div class="text-col">
+          <span class="kicker anim" data-delay="0">Besoin <span class="k-index">01</span> · Clarté</span>
+          <h2 class="title anim" data-delay="120">Vos clients doivent comprendre<br>tout de suite ce que vous proposez.</h2>
+          <p class="subtitle anim" data-delay="260">On clarifie votre message pour que le visiteur comprenne en 3 secondes qui vous êtes, ce que vous faites, et pourquoi vous choisir.</p>
+        </div>
+        <div class="visual-col">
+          <div class="compr-card anim anim-right" data-delay="450">
+            <div class="compr-row">
+              <span class="compr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg></span>
+              <div><strong>Qui vous êtes</strong><em>Identité claire dès l'arrivée</em></div>
             </div>
-            <span class="step-num">01</span>
-            <p>Qui vous<br>êtes</p>
-          </div>
-          <div class="step-connector anim" data-delay="600"><span></span></div>
-          <div class="step-card anim" data-delay="700">
-            <div class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
+            <div class="compr-row">
+              <span class="compr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg></span>
+              <div><strong>Ce que vous faites</strong><em>Services compris en un coup d'œil</em></div>
             </div>
-            <span class="step-num">02</span>
-            <p>Ce que vous<br>faites</p>
-          </div>
-          <div class="step-connector anim" data-delay="900"><span></span></div>
-          <div class="step-card anim" data-delay="1000">
-            <div class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.1L12 17l-5.5 2.4 1-6.1L3 8.9 9 8z"/></svg>
+            <div class="compr-row">
+              <span class="compr-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg></span>
+              <div><strong>Pourquoi vous choisir</strong><em>Votre valeur, mise en avant</em></div>
             </div>
-            <span class="step-num">03</span>
-            <p>Pourquoi vous<br>choisir</p>
           </div>
         </div>
       </div>
@@ -71,131 +67,86 @@
     <section class="slide" data-slide="3" data-transition="doubt">
       <div class="slide-inner split-visual">
         <div class="text-col">
-          <h2 class="title anim" data-delay="0">Un client qui doute<br>ne contacte pas.</h2>
-          <p class="subtitle anim" data-delay="150">On renforce la confiance avec une image plus professionnelle, des preuves visibles, des avis, des réalisations, et un site qui reflète votre sérieux.</p>
+          <span class="kicker anim" data-delay="0">Besoin <span class="k-index">02</span> · Confiance</span>
+          <h2 class="title anim" data-delay="120">Un client qui doute<br>ne contacte pas.</h2>
+          <p class="subtitle anim" data-delay="260">On renforce la confiance avec une image plus professionnelle, des preuves visibles, des avis, des réalisations, et un site qui reflète votre sérieux.</p>
         </div>
         <div class="visual-col">
-          <div class="doubt-scene">
-            <div class="phone-mockup premium anim" data-delay="400">
-              <div class="phone-notch"></div>
-              <div class="phone-hero-mini"></div>
-              <div class="phone-cards-mini"><div></div><div></div></div>
-              <div class="phone-trust-row">
-                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          <div class="proof-stack">
+            <div class="proof-card anim anim-right" data-delay="450">
+              <div class="proof-rating">
+                <span class="stars">★★★★★</span><b>4,9</b><small>128 avis</small>
               </div>
             </div>
-            <div class="doubt-tag anim" data-delay="800">confiance</div>
-            <div class="thought-pills">
-              <span class="thought-pill anim" data-delay="1000">Avis clients</span>
-              <span class="thought-pill anim" data-delay="1200">Réalisations</span>
-              <span class="thought-pill anim" data-delay="1400">Preuves</span>
-              <span class="thought-pill anim" data-delay="1600">Image pro</span>
+            <div class="proof-card anim anim-right" data-delay="600">
+              <p class="proof-quote"><em>Travail sérieux et réactif.</em> On a tout de suite vu la différence sur les demandes.”</p>
+            </div>
+            <div class="proof-badges anim anim-right" data-delay="750">
+              <span class="proof-badge">Avis clients</span>
+              <span class="proof-badge">Réalisations</span>
+              <span class="proof-badge">Image pro</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Slide 4 — Concurrents -->
+    <!-- Slide 4 — Différenciation -->
     <section class="slide" data-slide="4" data-transition="compare">
       <div class="slide-inner slide-compare">
-        <h2 class="title center anim" data-delay="0">Votre site doit vous faire paraître<br>comme le choix évident.</h2>
-        <p class="subtitle center anim" data-delay="150">On positionne votre entreprise pour qu'elle ait l'air plus claire, plus premium et plus rassurante que les alternatives.</p>
-        <div class="compare">
-          <div class="compare-panel before">
-            <div class="panel-badge anim" data-delay="300">Ailleurs</div>
-            <ul>
-              <li class="anim" data-delay="500">Message flou.</li>
-              <li class="anim" data-delay="650">Peu de preuves.</li>
-              <li class="anim" data-delay="800">Design daté.</li>
-              <li class="anim" data-delay="950">Le client hésite.</li>
-            </ul>
-            <div class="compare-device ghost-device anim" data-delay="1100">
-              <div class="device-bar muted"></div>
-              <div class="device-body">
-                <div class="sk-line"></div>
-                <div class="sk-line short"></div>
-                <div class="sk-box"></div>
-              </div>
-            </div>
+        <div class="ed-head center">
+          <span class="kicker anim" data-delay="0">Besoin <span class="k-index">03</span> · Différenciation</span>
+          <h2 class="title center anim" data-delay="120">Votre site doit vous faire paraître<br>comme le choix évident.</h2>
+          <p class="subtitle center anim" data-delay="260">On positionne votre entreprise pour qu'elle ait l'air plus claire, plus premium et plus rassurante que les alternatives.</p>
+        </div>
+        <div class="choice-row">
+          <div class="choice-col anim" data-delay="500">
+            <div class="choice-thumb"><div class="choice-head"><i></i><i></i><i></i></div><div class="choice-body"><div class="l"></div><div class="l s"></div><div class="l box"></div></div></div>
+            <span class="choice-label">Concurrent A</span>
           </div>
-          <div class="compare-divider anim" data-delay="1400"><span></span></div>
-          <div class="compare-panel after">
-            <div class="panel-badge anim" data-delay="1600">Chez vous</div>
-            <ul>
-              <li class="anim" data-delay="1800">Message clair.</li>
-              <li class="anim" data-delay="1950">Preuves visibles.</li>
-              <li class="anim" data-delay="2100">Image premium.</li>
-              <li class="anim" data-delay="2250">Choix évident.</li>
-            </ul>
-            <div class="compare-device premium-device anim" data-delay="2400">
-              <div class="device-bar"><span class="dot"></span><span class="brand">Entreprise</span><span class="pill">Contact</span></div>
-              <div class="device-body">
-                <div class="hero-line"></div>
-                <div class="sub-line"></div>
-                <div class="cta-pill"></div>
-                <div class="card-row"><div></div><div></div></div>
-              </div>
-            </div>
+          <div class="choice-col you anim anim-scale" data-delay="650">
+            <div class="choice-thumb"><div class="choice-head"><i></i><i></i><i></i></div><div class="choice-body"><div class="l"></div><div class="l s"></div><div class="l box"></div></div></div>
+            <span class="choice-label">Vous</span>
+          </div>
+          <div class="choice-col anim" data-delay="800">
+            <div class="choice-thumb"><div class="choice-head"><i></i><i></i><i></i></div><div class="choice-body"><div class="l"></div><div class="l s"></div><div class="l box"></div></div></div>
+            <span class="choice-label">Concurrent B</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Slide 5 — Convertir -->
-    <section class="slide" data-slide="5" data-transition="questions">
+    <!-- Slide 5 — Conversion -->
+    <section class="slide" data-slide="5" data-transition="glass">
       <div class="slide-inner slide-questions">
-        <div class="questions-header">
-          <h2 class="title anim" data-delay="0">Un bon site guide le client<br>vers l'action.</h2>
-          <p class="subtitle anim" data-delay="150">On structure le parcours pour pousser naturellement vers l'appel, le devis, la réservation ou le formulaire de contact.</p>
+        <div class="ed-head center">
+          <span class="kicker anim" data-delay="0">Besoin <span class="k-index">04</span> · Conversion</span>
+          <h2 class="title center anim" data-delay="120">Un bon site guide le client<br>vers l'action.</h2>
+          <p class="subtitle center anim" data-delay="260">On structure le parcours pour pousser naturellement vers l'appel, le devis, la réservation ou le formulaire de contact.</p>
         </div>
-        <div class="grid-2x2">
-          <div class="question-card anim" data-delay="350">
-            <div class="q-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4h4l2 5-3 2c1.5 3 4 5.5 7 7l2-3 5 2v4c0 1-1 2-2 2C9 19 5 15 4 8c0-1 1-2 2-2z"/></svg></div>
-            <span>Appel</span>
-          </div>
-          <div class="question-card anim" data-delay="500">
-            <div class="q-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8M12 8v8"/></svg></div>
-            <span>Devis</span>
-          </div>
-          <div class="question-card anim" data-delay="650">
-            <div class="q-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
-            <span>Réservation</span>
-          </div>
-          <div class="question-card anim" data-delay="800">
-            <div class="q-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16v12H4z"/><path d="m4 6 8 7 8-7"/></svg></div>
-            <span>Formulaire contact</span>
-          </div>
+        <div class="funnel">
+          <div class="funnel-stage anim" data-delay="450"><span class="fnum">01</span> Le visiteur arrive</div>
+          <div class="funnel-stage anim" data-delay="600"><span class="fnum">02</span> Il comprend et se rassure</div>
+          <div class="funnel-stage anim" data-delay="750"><span class="fnum">03</span> Il est guidé vers l'action</div>
+          <div class="funnel-stage anim anim-scale" data-delay="900">Appel · Devis · Contact</div>
         </div>
       </div>
     </section>
 
     <!-- Slide 6 — Sur mesure -->
     <section class="slide" data-slide="6" data-transition="build">
-      <div class="slide-inner split-visual slide-build">
+      <div class="slide-inner split-visual">
         <div class="text-col wide">
-          <h2 class="title anim" data-delay="0">Pas un template.<br>Une solution sur mesure.</h2>
-          <p class="subtitle anim" data-delay="150">On ne copie-colle pas un design. On construit autour de votre activité, vos clients, vos services, vos objectifs et vos points forts.</p>
-          <div class="process-steps">
-            <div class="process-step anim" data-delay="500"><span class="p-num">✓</span><span>Votre activité</span></div>
-            <div class="process-step anim" data-delay="700"><span class="p-num">✓</span><span>Vos clients</span></div>
-            <div class="process-step anim" data-delay="900"><span class="p-num">✓</span><span>Vos objectifs</span></div>
-          </div>
+          <span class="kicker anim" data-delay="0">Besoin <span class="k-index">05</span> · Sur mesure</span>
+          <h2 class="title anim" data-delay="120">Pas un template.<br>Une solution sur mesure.</h2>
+          <p class="subtitle anim" data-delay="260">On ne copie-colle pas un design. On construit autour de votre activité, vos clients, vos services, vos objectifs et vos points forts.</p>
         </div>
         <div class="visual-col">
-          <div class="browser-mockup">
-            <div class="browser-chrome">
-              <span></span><span></span><span></span>
-              <div class="url-bar">votre-entreprise.be</div>
-            </div>
-            <div class="browser-canvas">
-              <div class="build-block header done anim" data-delay="600"></div>
-              <div class="build-block hero done anim" data-delay="800"></div>
-              <div class="build-block text done anim" data-delay="1000"></div>
-              <div class="build-block card done anim" data-delay="1200"></div>
-              <div class="build-block card done anim" data-delay="1400"></div>
-              <div class="build-block cta done anim" data-delay="1600"></div>
-            </div>
+          <div class="module-grid">
+            <div class="module tall anim anim-scale" data-delay="450"><span class="mlabel">Votre activité</span><div class="mbar"></div><div class="mbar s"></div><div class="mbar"></div></div>
+            <div class="module anim anim-scale" data-delay="600"><span class="mlabel">Vos clients</span><div class="mbar s"></div></div>
+            <div class="module accent anim anim-scale" data-delay="750"><span class="mlabel">Vos objectifs</span><div class="mbar"></div></div>
+            <div class="module anim anim-scale" data-delay="900"><span class="mlabel">Vos points forts</span><div class="mbar s"></div></div>
           </div>
         </div>
       </div>
@@ -203,69 +154,53 @@
 
     <!-- Slide 7 — Mobile -->
     <section class="slide" data-slide="7" data-transition="vision">
-      <div class="slide-inner slide-vision">
-        <h2 class="title anim" data-delay="0">Vos clients visitent surtout<br>depuis leur téléphone.</h2>
-        <p class="subtitle anim" data-delay="150">On optimise l'expérience mobile pour que le site soit rapide, clair et facile à utiliser, surtout pour contacter votre entreprise.</p>
-        <div class="mockup-stage">
-          <div class="mockup-cluster mockup-mobile-focus">
-            <div class="phone-mockup large premium anim" data-delay="400">
-              <div class="phone-notch"></div>
-              <div class="phone-hero-mini"></div>
-              <div class="phone-cards-mini"><div></div><div></div></div>
-              <button class="phone-cta-mini">Contact</button>
-            </div>
+      <div class="slide-inner">
+        <div class="ed-head">
+          <span class="kicker anim" data-delay="0">Besoin <span class="k-index">06</span> · Mobile</span>
+          <h2 class="title anim" data-delay="120">Vos clients visitent surtout<br>depuis leur téléphone.</h2>
+          <p class="subtitle anim" data-delay="260">On optimise l'expérience mobile pour que le site soit rapide, clair et facile à utiliser, surtout pour vous contacter.</p>
+        </div>
+        <div class="mobile-stage">
+          <div class="phone-mockup large premium anim anim-scale" data-delay="450">
+            <div class="phone-notch"></div>
+            <div class="phone-hero-mini"></div>
+            <div class="phone-cards-mini"><div></div><div></div></div>
+            <button class="phone-cta-mini">Contact</button>
+            <span class="tap-ripple"></span>
           </div>
-          <div class="value-tags">
-            <span class="tag anim" data-delay="900">Rapide</span>
-            <span class="tag anim" data-delay="1050">Clair</span>
-            <span class="tag anim" data-delay="1200">Mobile-first</span>
-            <span class="tag anim" data-delay="1350">Contact facile</span>
+          <div class="mobile-points">
+            <div class="mobile-point anim anim-right" data-delay="650"><span class="mp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 3 4 14h7l-1 7 9-11h-7z"/></svg></span> Rapide à charger</div>
+            <div class="mobile-point anim anim-right" data-delay="800"><span class="mp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></span> Clair et lisible</div>
+            <div class="mobile-point anim anim-right" data-delay="950"><span class="mp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4h4l2 5-3 2c1.5 3 4 5.5 7 7l2-3 5 2v4c0 1-1 2-2 2C9 19 5 15 4 8c0-1 1-2 2-2z"/></svg></span> Contact en un geste</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Slide 8 — Identité -->
-    <section class="slide" data-slide="8" data-transition="compare">
+    <section class="slide" data-slide="8" data-transition="questions">
       <div class="slide-inner slide-compare">
-        <h2 class="title center anim" data-delay="0">On garde votre ADN.<br>On améliore la perception.</h2>
-        <p class="subtitle center anim" data-delay="150">On ne change pas votre entreprise. On la présente mieux : plus moderne, plus lisible, plus crédible, tout en respectant votre image.</p>
-        <div class="compare">
-          <div class="compare-panel before">
-            <div class="panel-badge anim" data-delay="300">Avant</div>
-            <ul>
-              <li class="anim" data-delay="500">Image datée.</li>
-              <li class="anim" data-delay="650">Message peu lisible.</li>
-              <li class="anim" data-delay="800">Crédibilité limitée.</li>
-              <li class="anim" data-delay="950">ADN noyé.</li>
+        <div class="ed-head center">
+          <span class="kicker anim" data-delay="0">Besoin <span class="k-index">07</span> · Identité</span>
+          <h2 class="title center anim" data-delay="120">On garde votre ADN.<br>On améliore la perception.</h2>
+          <p class="subtitle center anim" data-delay="260">On ne change pas votre entreprise. On la présente mieux : plus moderne, plus lisible, plus crédible, tout en respectant votre image.</p>
+        </div>
+        <div class="identity">
+          <div class="id-col keep anim anim-left" data-delay="500">
+            <h4><span class="id-dot"></span>On garde</h4>
+            <ul class="id-list">
+              <li>Votre nom et votre histoire</li>
+              <li>Vos couleurs et votre logo</li>
+              <li>Votre ton et vos valeurs</li>
             </ul>
-            <div class="compare-device ghost-device anim" data-delay="1100">
-              <div class="device-bar muted"></div>
-              <div class="device-body">
-                <div class="sk-line"></div>
-                <div class="sk-line short"></div>
-                <div class="sk-box"></div>
-              </div>
-            </div>
           </div>
-          <div class="compare-divider anim" data-delay="1400"><span></span></div>
-          <div class="compare-panel after">
-            <div class="panel-badge anim" data-delay="1600">Après</div>
-            <ul>
-              <li class="anim" data-delay="1800">Plus moderne.</li>
-              <li class="anim" data-delay="1950">Plus lisible.</li>
-              <li class="anim" data-delay="2100">Plus crédible.</li>
-              <li class="anim" data-delay="2250">ADN respecté.</li>
+          <div class="id-col improve anim anim-right" data-delay="650">
+            <h4><span class="id-dot"></span>On améliore</h4>
+            <ul class="id-list">
+              <li>Une image plus moderne</li>
+              <li>Un message plus lisible</li>
+              <li>Une crédibilité renforcée</li>
             </ul>
-            <div class="compare-device premium-device anim" data-delay="2400">
-              <div class="device-bar"><span class="dot"></span><span class="brand">Entreprise</span><span class="pill">Contact</span></div>
-              <div class="device-body">
-                <div class="hero-line"></div>
-                <div class="sub-line"></div>
-                <div class="cta-pill"></div>
-                <div class="card-row"><div></div><div></div></div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -274,31 +209,26 @@
     <!-- Slide 9 — Méthode -->
     <section class="slide" data-slide="9" data-transition="timeline">
       <div class="slide-inner">
-        <h2 class="title anim" data-delay="0">Audit → Maquette → Site sur mesure</h2>
-        <p class="subtitle anim" data-delay="150">On analyse votre site actuel, on identifie ce qui bloque, puis on vous montre une version sur mesure avant de lancer le projet.</p>
-        <div class="timeline">
-          <div class="step-card anim" data-delay="400">
-            <div class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            </div>
-            <span class="step-num">01</span>
-            <p>Audit de<br>votre site</p>
+        <div class="ed-head center">
+          <span class="kicker anim" data-delay="0">La méthode</span>
+          <h2 class="title center anim" data-delay="120">Audit → Maquette → Site sur mesure</h2>
+          <p class="subtitle center anim" data-delay="260">On analyse votre site actuel, on identifie ce qui bloque, puis on vous montre une version sur mesure avant de lancer le projet.</p>
+        </div>
+        <div class="rail">
+          <div class="rail-step anim anim-scale" data-delay="450">
+            <div class="rail-dot">1</div>
+            <h4>Audit</h4>
+            <p>On analyse votre site et ce qui bloque.</p>
           </div>
-          <div class="step-connector anim" data-delay="600"><span></span></div>
-          <div class="step-card anim" data-delay="700">
-            <div class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 12h10M7 16h6"/></svg>
-            </div>
-            <span class="step-num">02</span>
-            <p>Maquette<br>sur mesure</p>
+          <div class="rail-step anim anim-scale" data-delay="650">
+            <div class="rail-dot">2</div>
+            <h4>Maquette</h4>
+            <p>On vous montre une version sur mesure.</p>
           </div>
-          <div class="step-connector anim" data-delay="900"><span></span></div>
-          <div class="step-card anim" data-delay="1000">
-            <div class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-            </div>
-            <span class="step-num">03</span>
-            <p>Site<br>sur mesure</p>
+          <div class="rail-step anim anim-scale" data-delay="850">
+            <div class="rail-dot">3</div>
+            <h4>Site sur mesure</h4>
+            <p>On lance le projet une fois validé.</p>
           </div>
         </div>
       </div>
@@ -308,10 +238,11 @@
     <section class="slide" data-slide="10" data-transition="closing">
       <div class="slide-inner closing">
         <div class="closing-text">
-          <h1 class="title-xl anim" data-delay="0">Votre site existe déjà.<br>Maintenant, il doit vous rapporter plus.</h1>
-          <p class="subtitle anim" data-delay="300">Notre objectif est simple : transformer votre site actuel en un outil clair, crédible et conçu pour générer plus de demandes.</p>
+          <span class="kicker anim" data-delay="0">Zerosix · sites premium</span>
+          <h1 class="title-xl anim" data-delay="150">Votre site existe déjà.<br>Maintenant, il doit vous rapporter plus.</h1>
+          <p class="subtitle anim" data-delay="350">Notre objectif est simple : transformer votre site actuel en un outil clair, crédible et conçu pour générer plus de demandes.</p>
           <p class="cta-line anim" data-delay="600">Zerosix, sites premium pour entreprises ambitieuses</p>
-          <img src="assets/logosite.webp" alt="Zerosix" class="logo anim" data-delay="1000">
+          <img src="assets/logosite.webp" alt="Zerosix" class="logo anim" data-delay="900">
         </div>
         <div class="closing-visual">
           <div class="phone-mockup tilted premium">
@@ -323,6 +254,7 @@
         </div>
       </div>
     </section>
+
   </div>
 
   <button id="fullscreen" class="fullscreen-btn" aria-label="Plein écran">
