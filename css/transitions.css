@@ -1,0 +1,776 @@
+/* ── Per-slide page transitions & element choreography ─────── */
+
+/* Base: slides use keyframe transitions, not generic fade */
+.slide {
+  transition: none !important;
+}
+
+.slide.is-active,
+.slide.is-entering {
+  visibility: visible;
+}
+
+.slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide.is-entering {
+  pointer-events: none;
+}
+
+/* Hidden state per transition type (idle slides only) */
+.slide[data-transition="hook"]:not(.is-active):not(.is-entering)     { opacity: 0; transform: scale(1.04); filter: blur(6px); }
+.slide[data-transition="timeline"]:not(.is-active):not(.is-entering) { opacity: 0; transform: translateX(60px); }
+.slide[data-transition="doubt"]:not(.is-active):not(.is-entering)    { opacity: 0; filter: blur(10px); }
+.slide[data-transition="questions"]:not(.is-active):not(.is-entering){ opacity: 0; transform: scale(0.94); }
+.slide[data-transition="vision"]:not(.is-active):not(.is-entering)   { opacity: 0; clip-path: inset(0 0 100% 0); }
+.slide[data-transition="compare"]:not(.is-active):not(.is-entering)  { opacity: 0; }
+.slide[data-transition="glass"]:not(.is-active):not(.is-entering)    { opacity: 0; transform: translateY(30px); }
+.slide[data-transition="build"]:not(.is-active):not(.is-entering)    { opacity: 0; transform: translateY(20px); }
+.slide[data-transition="closing"]:not(.is-active):not(.is-entering)  { opacity: 0; transform: scale(1.02); }
+
+/* ── PAGE ENTER (forward) ───────────────────────────────────── */
+.slide[data-transition="hook"].enter-fwd     { animation: hookEnterFwd 0.7s var(--ease-out) forwards; }
+.slide[data-transition="timeline"].enter-fwd { animation: timelineEnterFwd 0.6s var(--ease-out) forwards; }
+.slide[data-transition="doubt"].enter-fwd    { animation: doubtEnterFwd 0.75s var(--ease-out) forwards; }
+.slide[data-transition="questions"].enter-fwd { animation: questionsEnterFwd 0.65s var(--ease-spring) forwards; }
+.slide[data-transition="vision"].enter-fwd   { animation: visionEnterFwd 0.8s var(--ease-out) forwards; }
+.slide[data-transition="compare"].enter-fwd  { animation: compareEnterFwd 0.7s var(--ease-out) forwards; }
+.slide[data-transition="glass"].enter-fwd   { animation: glassEnterFwd 0.65s var(--ease-out) forwards; }
+.slide[data-transition="build"].enter-fwd    { animation: buildEnterFwd 0.7s var(--ease-out) forwards; }
+.slide[data-transition="closing"].enter-fwd  { animation: closingEnterFwd 0.85s var(--ease-out) forwards; }
+
+/* ── PAGE ENTER (backward) ──────────────────────────────────── */
+.slide[data-transition="hook"].enter-back     { animation: hookEnterBack 0.8s var(--ease-out) forwards; }
+.slide[data-transition="timeline"].enter-back { animation: timelineEnterBack 0.7s var(--ease-out) forwards; }
+.slide[data-transition="doubt"].enter-back    { animation: doubtEnterBack 0.9s var(--ease-out) forwards; }
+.slide[data-transition="questions"].enter-back { animation: questionsEnterBack 0.75s var(--ease-out) forwards; }
+.slide[data-transition="vision"].enter-back   { animation: visionEnterBack 0.9s var(--ease-out) forwards; }
+.slide[data-transition="compare"].enter-back  { animation: compareEnterBack 0.8s var(--ease-out) forwards; }
+.slide[data-transition="glass"].enter-back    { animation: glassEnterBack 0.75s var(--ease-out) forwards; }
+.slide[data-transition="build"].enter-back     { animation: buildEnterBack 0.8s var(--ease-out) forwards; }
+.slide[data-transition="closing"].enter-back  { animation: closingEnterBack 1s var(--ease-out) forwards; }
+
+/* ── Keyframes: page transitions ────────────────────────────── */
+@keyframes hookEnterFwd {
+  from { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+  to   { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+@keyframes hookEnterBack {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes timelineEnterFwd {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes timelineEnterBack {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes doubtEnterFwd {
+  from { opacity: 0; filter: blur(14px); transform: scale(0.98); }
+  to   { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+@keyframes doubtEnterBack {
+  from { opacity: 0; filter: blur(10px); }
+  to   { opacity: 1; filter: blur(0); }
+}
+
+@keyframes questionsEnterFwd {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes questionsEnterBack {
+  from { opacity: 0; transform: scale(1.04); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes visionEnterFwd {
+  from { opacity: 0; clip-path: inset(0 0 100% 0); }
+  to   { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+@keyframes visionEnterBack {
+  from { opacity: 0; clip-path: inset(100% 0 0 0); }
+  to   { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+
+@keyframes compareEnterFwd {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes compareEnterBack {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes glassEnterFwd {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glassEnterBack {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes buildEnterFwd {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes buildEnterBack {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes closingEnterFwd {
+  from { opacity: 0; transform: scale(1.03); filter: brightness(0.6); }
+  to   { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
+@keyframes closingEnterBack {
+  from { opacity: 0; filter: brightness(0.5); }
+  to   { opacity: 1; filter: brightness(1); }
+}
+
+/* ── Element animations: reset when not playing ─────────────── */
+.slide .title-xl, .slide .title, .slide .subtitle,
+.slide .search-bar, .slide .blur-card,
+.slide .step-card, .slide .step-connector,
+.slide .phone-mockup, .slide .doubt-tag, .slide .thought-pill,
+.slide .question-card, .slide .laptop-mockup,
+.slide .phone-mockup.small, .slide .tag,
+.slide .panel-badge, .slide .compare-panel,
+.slide .compare-device, .slide .compare-panel li,
+.slide .glass-card, .slide .process-step,
+.slide .build-block, .slide .browser-mockup,
+.slide .logo, .slide .cta-line,
+.slide .final-layer, .slide .wireframe-layer {
+  opacity: 0;
+}
+
+.slide .final-layer { opacity: 0 !important; }
+.slide .compare-divider { opacity: 1; }
+.slide .compare-divider span { transform: scaleY(0); transform-origin: center; opacity: 0; }
+.slide .phone-mockup.tilted { transform: rotate(-8deg) scale(0.85) translateY(30px); opacity: 0; }
+
+/* Lock visibility once entrance is done (before ambient overrides animation) */
+.slide.ambient-active .title-xl,
+.slide.ambient-active .title,
+.slide.ambient-active .subtitle,
+.slide.ambient-active .search-bar,
+.slide.ambient-active .step-card,
+.slide.ambient-active .step-connector,
+.slide.ambient-active .phone-mockup:not(.tilted),
+.slide.ambient-active .doubt-tag,
+.slide.ambient-active .question-card,
+.slide.ambient-active .laptop-mockup,
+.slide.ambient-active .phone-mockup.small,
+.slide.ambient-active .tag,
+.slide.ambient-active .panel-badge,
+.slide.ambient-active .compare-panel,
+.slide.ambient-active .compare-device,
+.slide.ambient-active .compare-panel li,
+.slide.ambient-active .glass-card,
+.slide.ambient-active .process-step,
+.slide.ambient-active .browser-mockup,
+.slide.ambient-active .build-block:not(.pending),
+.slide.ambient-active .cta-line,
+.slide.ambient-active .wireframe-layer {
+  opacity: 1;
+}
+.slide.ambient-active .blur-card { opacity: 0.55; }
+.slide.ambient-active .thought-pill:nth-child(1) { opacity: 0.7; }
+.slide.ambient-active .thought-pill:nth-child(2) { opacity: 0.6; }
+.slide.ambient-active .thought-pill:nth-child(3) { opacity: 0.65; }
+.slide.ambient-active .thought-pill:nth-child(4) { opacity: 0.55; }
+.slide.ambient-active .compare-divider span { opacity: 0.6; transform: scaleY(1); }
+.slide.ambient-active .build-block.pending { opacity: 0.6; }
+.slide.ambient-active .logo { opacity: 0.9; }
+.slide.ambient-active .phone-mockup.tilted { opacity: 1; }
+.slide.ambient-active[data-transition="vision"] .final-layer {
+  opacity: 1 !important;
+}
+
+/* ── SLIDE 1: Hook — search reveal ──────────────────────────── */
+.slide[data-transition="hook"].play-animations .title-xl {
+  animation: hookTitleIn 1s var(--ease-out) 0.15s forwards;
+}
+.slide[data-transition="hook"].play-animations .subtitle {
+  animation: fadeUp 0.8s var(--ease-out) 0.4s forwards;
+}
+.slide[data-transition="hook"].play-animations .visual-center {
+  animation: fadeIn 0.01s 0.5s forwards;
+}
+.slide[data-transition="hook"].play-animations .search-bar {
+  animation: hookSearchIn 1s var(--ease-spring) 0.65s forwards;
+}
+.slide[data-transition="hook"].play-animations .blur-card:nth-child(1) {
+  animation: hookBlurCard 1.2s var(--ease-out) 1s forwards;
+}
+.slide[data-transition="hook"].play-animations .blur-card:nth-child(2) {
+  animation: hookBlurCard 1.2s var(--ease-out) 1.2s forwards;
+}
+.slide[data-transition="hook"].play-animations .blur-card:nth-child(3) {
+  animation: hookBlurCard 1.2s var(--ease-out) 1.4s forwards;
+}
+.slide[data-transition="hook"].play-animations .blur-card:nth-child(4) {
+  animation: hookBlurCard 1.2s var(--ease-out) 1.6s forwards;
+}
+
+@keyframes hookTitleIn {
+  from { opacity: 0; transform: translateY(-24px); letter-spacing: 0.02em; }
+  to   { opacity: 1; transform: translateY(0); letter-spacing: -0.03em; }
+}
+@keyframes hookSearchIn {
+  from { opacity: 0; transform: scale(0.85); box-shadow: 0 0 0 rgba(29,240,106,0); }
+  60%  { box-shadow: 0 0 30px rgba(29,240,106,0.15); }
+  to   { opacity: 1; transform: scale(1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+}
+@keyframes hookBlurCard {
+  from { opacity: 0; filter: blur(20px); transform: scale(0.8); }
+  to   { opacity: 0.55; filter: blur(2px); transform: scale(1); }
+}
+
+/* ── SLIDE 2: Timeline — left to right flow ─────────────────── */
+.slide[data-transition="timeline"].play-animations .title {
+  animation: fadeUp 0.8s var(--ease-out) 0.1s forwards;
+}
+.slide[data-transition="timeline"].play-animations .subtitle {
+  animation: fadeUp 0.8s var(--ease-out) 0.25s forwards;
+}
+.slide[data-transition="timeline"].play-animations .timeline .step-card:nth-child(1) {
+  animation: timelineStepIn 0.7s var(--ease-spring) 0.45s forwards;
+}
+.slide[data-transition="timeline"].play-animations .timeline .step-connector:nth-child(2) {
+  animation: fadeIn 0.5s var(--ease-out) 0.75s forwards;
+}
+.slide[data-transition="timeline"].play-animations .timeline .step-card:nth-child(3) {
+  animation: timelineStepIn 0.7s var(--ease-spring) 0.85s forwards;
+}
+.slide[data-transition="timeline"].play-animations .timeline .step-connector:nth-child(4) {
+  animation: fadeIn 0.5s var(--ease-out) 1.1s forwards;
+}
+.slide[data-transition="timeline"].play-animations .timeline .step-card:nth-child(5) {
+  animation: timelineStepIn 0.7s var(--ease-spring) 1.2s forwards;
+}
+
+@keyframes timelineStepIn {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── SLIDE 3: Doubt — floating thoughts ─────────────────────── */
+.slide[data-transition="doubt"].play-animations .title {
+  animation: doubtTitleIn 1s var(--ease-out) 0.15s forwards;
+}
+.slide[data-transition="doubt"].play-animations .subtitle {
+  animation: fadeUp 0.8s var(--ease-out) 0.35s forwards;
+}
+.slide[data-transition="doubt"].play-animations .phone-mockup {
+  animation: doubtPhoneIn 1s var(--ease-out) 0.5s forwards;
+}
+.slide[data-transition="doubt"].play-animations .doubt-tag {
+  animation: doubtTagIn 0.9s var(--ease-out) 1s forwards;
+}
+.slide[data-transition="doubt"].play-animations .thought-pill:nth-child(1) {
+  animation: thoughtFloat1 1.5s var(--ease-out) 1.2s forwards;
+}
+.slide[data-transition="doubt"].play-animations .thought-pill:nth-child(2) {
+  animation: thoughtFloat2 1.5s var(--ease-out) 1.45s forwards;
+}
+.slide[data-transition="doubt"].play-animations .thought-pill:nth-child(3) {
+  animation: thoughtFloat3 1.5s var(--ease-out) 1.7s forwards;
+}
+.slide[data-transition="doubt"].play-animations .thought-pill:nth-child(4) {
+  animation: thoughtFloat4 1.5s var(--ease-out) 1.95s forwards;
+}
+
+@keyframes doubtTitleIn {
+  from { opacity: 0; filter: blur(6px); transform: translateY(10px); }
+  to   { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+@keyframes doubtPhoneIn {
+  from { opacity: 0; transform: translateY(40px) rotate(2deg); }
+  to   { opacity: 1; transform: translateY(0) rotate(0); }
+}
+@keyframes doubtTagIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes thoughtFloat1 {
+  from { opacity: 0; transform: translate(10px, 10px); }
+  to   { opacity: 0.7; transform: translate(0, 0); }
+}
+@keyframes thoughtFloat2 {
+  from { opacity: 0; transform: translate(15px, -5px); }
+  to   { opacity: 0.6; transform: translate(0, 0); }
+}
+@keyframes thoughtFloat3 {
+  from { opacity: 0; transform: translate(8px, 12px); }
+  to   { opacity: 0.65; transform: translate(0, 0); }
+}
+@keyframes thoughtFloat4 {
+  from { opacity: 0; transform: translate(12px, 8px); }
+  to   { opacity: 0.55; transform: translate(0, 0); }
+}
+
+/* ── SLIDE 4: Questions — 2×2 pop from corners ──────────────── */
+.slide[data-transition="questions"].play-animations .title {
+  animation: fadeUp 0.8s var(--ease-out) 0.1s forwards;
+}
+.slide[data-transition="questions"].play-animations .subtitle {
+  animation: fadeUp 0.8s var(--ease-out) 0.25s forwards;
+}
+.slide[data-transition="questions"].play-animations .question-card:nth-child(1) {
+  animation: questionPopTL 0.7s var(--ease-spring) 0.4s forwards;
+}
+.slide[data-transition="questions"].play-animations .question-card:nth-child(2) {
+  animation: questionPopTR 0.7s var(--ease-spring) 0.55s forwards;
+}
+.slide[data-transition="questions"].play-animations .question-card:nth-child(3) {
+  animation: questionPopBL 0.7s var(--ease-spring) 0.7s forwards;
+}
+.slide[data-transition="questions"].play-animations .question-card:nth-child(4) {
+  animation: questionPopBR 0.7s var(--ease-spring) 0.85s forwards;
+}
+
+@keyframes questionPopTL {
+  from { opacity: 0; transform: translate(-20px, -20px) scale(0.85); }
+  to   { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+@keyframes questionPopTR {
+  from { opacity: 0; transform: translate(20px, -20px) scale(0.85); }
+  to   { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+@keyframes questionPopBL {
+  from { opacity: 0; transform: translate(-20px, 20px) scale(0.85); }
+  to   { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+@keyframes questionPopBR {
+  from { opacity: 0; transform: translate(20px, 20px) scale(0.85); }
+  to   { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+
+/* ── SLIDE 5: Vision — wireframe → design morph ─────────────── */
+.slide[data-transition="vision"].play-animations .title {
+  animation: fadeUp 0.8s var(--ease-out) 0.1s forwards;
+}
+.slide[data-transition="vision"].play-animations .subtitle {
+  animation: fadeUp 0.8s var(--ease-out) 0.25s forwards;
+}
+.slide[data-transition="vision"].play-animations .laptop-mockup {
+  animation: visionLaptopIn 1s var(--ease-out) 0.4s forwards;
+}
+.slide[data-transition="vision"].play-animations .wireframe-layer {
+  animation: visionWireframeIn 0.8s var(--ease-out) 0.6s forwards;
+}
+.slide[data-transition="vision"].play-animations .final-layer {
+  animation: visionMorphIn 1.4s var(--ease-out) 1.8s forwards !important;
+}
+.slide[data-transition="vision"].play-animations .phone-mockup.small {
+  animation: visionPhoneIn 0.8s var(--ease-spring) 2.2s forwards;
+}
+.slide[data-transition="vision"].play-animations .tag:nth-child(1) {
+  animation: tagSlideIn 0.6s var(--ease-out) 2.5s forwards;
+}
+.slide[data-transition="vision"].play-animations .tag:nth-child(2) {
+  animation: tagSlideIn 0.6s var(--ease-out) 2.65s forwards;
+}
+.slide[data-transition="vision"].play-animations .tag:nth-child(3) {
+  animation: tagSlideIn 0.6s var(--ease-out) 2.8s forwards;
+}
+.slide[data-transition="vision"].play-animations .tag:nth-child(4) {
+  animation: tagSlideIn 0.6s var(--ease-out) 2.95s forwards;
+}
+
+@keyframes visionLaptopIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes visionWireframeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes visionMorphIn {
+  0%   { opacity: 0; filter: blur(4px); transform: scale(0.98); }
+  100% { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+@keyframes visionPhoneIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes tagSlideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Wireframe shimmer while waiting for morph */
+.slide[data-transition="vision"].play-animations .wf-hero,
+.slide[data-transition="vision"].play-animations .wf-nav {
+  animation: wireframeShimmer 1.5s ease-in-out 0.8s 2 forwards;
+}
+@keyframes wireframeShimmer {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
+/* ── SLIDE 6: Compare — split reveal ────────────────────────── */
+.slide[data-transition="compare"].play-animations .title {
+  animation: fadeUp 0.8s var(--ease-out) 0.1s forwards;
+}
+.slide[data-transition="compare"].play-animations .compare-panel.before .panel-badge {
+  animation: fadeUp 0.5s var(--ease-out) 0.3s forwards;
+}
+.slide[data-transition="compare"].play-animations .compare-panel.before {
+  animation: compareBeforeIn 0.9s var(--ease-out) 0.35s forwards;
+}
+.slide[data-transition="compare"].play-animations .compare-panel.before li:nth-child(1) { animation: fadeUp 0.5s var(--ease-out) 0.55s forwards; }
+.slide[data-transition="compare"].play-animations .compare-panel.before li:nth-child(2) { animation: fadeUp 0.5s var(--ease-out) 0.7s forwards; }
+.slide[data-transition="compare"].play-animations .compare-panel.before li:nth-child(3) { animation: fadeUp 0.5s var(--ease-out) 0.85s forwards; }
+.slide[data-transition="compare"].play-animations .compare-panel.before li:nth-child(4) { animation: fadeUp 0.5s var(--ease-out) 1s forwards; }
+.slide[data-transition="compare"].play-animations .compare-panel.before .ghost-device {
+  animation: compareGhostIn 0.8s var(--ease-out) 1.15s forwards;
+}
+.slide[data-transition="compare"].play-animations .compare-divider span {
+  animation: compareDividerGrow 0.8s var(--ease-out) 1.4s forwards;
+}
+.slide[data-transition="compare"].play-animations .compare-panel.after .panel-badge {
+  animation: fadeUp 0.5s var(--ease-out) 1.55s forwards;
+}
+.slide[data-transition="compare"].play-animations .compare-panel.after {
+  animation: compareAfterIn 0.9s var(--ease-out) 1.6s forwards;
+}
+.slide[data-transition="compare"].play-animations .compare-panel.after li:nth-child(1) { animation: fadeUp 0.5s var(--ease-out) 1.85s forwards; }
+.slide[data-transition="compare"].play-animations .compare-panel.after li:nth-child(2) { animation: fadeUp 0.5s var(--ease-out) 2s forwards; }
+.slide[data-transition="compare"].play-animations .compare-panel.after li:nth-child(3) { animation: fadeUp 0.5s var(--ease-out) 2.15s forwards; }
+.slide[data-transition="compare"].play-animations .compare-panel.after li:nth-child(4) { animation: fadeUp 0.5s var(--ease-out) 2.3s forwards; }
+.slide[data-transition="compare"].play-animations .compare-panel.after .premium-device {
+  animation: comparePremiumIn 0.9s var(--ease-spring) 2.45s forwards;
+}
+
+@keyframes compareBeforeIn {
+  from { opacity: 0; transform: translateX(-40px); filter: blur(4px); }
+  to   { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+@keyframes compareAfterIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes compareDividerGrow {
+  from { opacity: 0; transform: scaleY(0); }
+  to   { opacity: 0.6; transform: scaleY(1); }
+}
+@keyframes compareGhostIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes comparePremiumIn {
+  from { opacity: 0; transform: scale(0.9); box-shadow: 0 0 0 rgba(29,240,106,0); }
+  to   { opacity: 1; transform: scale(1); box-shadow: 0 0 20px rgba(29,240,106,0.1); }
+}
+
+/* ── SLIDE 7: Glass — cascade ───────────────────────────────── */
+.slide[data-transition="glass"].play-animations .title {
+  animation: fadeUp 0.8s var(--ease-out) 0.1s forwards;
+}
+.slide[data-transition="glass"].play-animations .subtitle {
+  animation: fadeUp 0.8s var(--ease-out) 0.25s forwards;
+}
+.slide[data-transition="glass"].play-animations .glass-card:nth-child(1) { animation: glassCascade 0.7s var(--ease-out) 0.4s forwards; }
+.slide[data-transition="glass"].play-animations .glass-card:nth-child(2) { animation: glassCascade 0.7s var(--ease-out) 0.52s forwards; }
+.slide[data-transition="glass"].play-animations .glass-card:nth-child(3) { animation: glassCascade 0.7s var(--ease-out) 0.64s forwards; }
+.slide[data-transition="glass"].play-animations .glass-card:nth-child(4) { animation: glassCascade 0.7s var(--ease-out) 0.76s forwards; }
+.slide[data-transition="glass"].play-animations .glass-card:nth-child(5) { animation: glassCascade 0.7s var(--ease-out) 0.88s forwards; }
+.slide[data-transition="glass"].play-animations .glass-card:nth-child(6) { animation: glassCascade 0.7s var(--ease-out) 1s forwards; }
+
+@keyframes glassCascade {
+  from { opacity: 0; transform: translateY(30px); filter: blur(8px); backdrop-filter: blur(0); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); backdrop-filter: blur(16px); }
+}
+
+/* ── SLIDE 8: Build — progressive construction ──────────────── */
+.slide[data-transition="build"].play-animations .title {
+  animation: fadeUp 0.8s var(--ease-out) 0.1s forwards;
+}
+.slide[data-transition="build"].play-animations .subtitle {
+  animation: fadeUp 0.8s var(--ease-out) 0.25s forwards;
+}
+.slide[data-transition="build"].play-animations .browser-mockup {
+  animation: buildMockupIn 0.8s var(--ease-out) 0.35s forwards;
+}
+.slide[data-transition="build"].play-animations .build-block.header { animation: buildBlockIn 0.5s var(--ease-out) 0.55s forwards; }
+.slide[data-transition="build"].play-animations .build-block.hero { animation: buildBlockIn 0.5s var(--ease-out) 0.75s forwards; }
+.slide[data-transition="build"].play-animations .build-block.text { animation: buildBlockIn 0.5s var(--ease-out) 0.95s forwards; }
+.slide[data-transition="build"].play-animations .build-block.card:nth-of-type(4) { animation: buildBlockPending 0.6s var(--ease-out) 1.15s forwards; }
+.slide[data-transition="build"].play-animations .build-block.card:nth-of-type(5) { animation: buildBlockPending 0.6s var(--ease-out) 1.35s forwards; }
+.slide[data-transition="build"].play-animations .build-block.cta { animation: buildBlockPending 0.6s var(--ease-out) 1.55s forwards; }
+.slide[data-transition="build"].play-animations .process-step:nth-child(1) { animation: buildStepIn 0.6s var(--ease-out) 0.6s forwards; }
+.slide[data-transition="build"].play-animations .process-step:nth-child(2) { animation: buildStepIn 0.6s var(--ease-out) 0.85s forwards; }
+.slide[data-transition="build"].play-animations .process-step:nth-child(3) { animation: buildStepIn 0.6s var(--ease-out) 1.1s forwards; }
+
+@keyframes buildMockupIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes buildBlockIn {
+  from { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+  to   { opacity: 1; transform: scaleY(1); }
+}
+@keyframes buildBlockPending {
+  from { opacity: 0; border-color: transparent; }
+  to   { opacity: 0.6; border-color: #3a3a3c; }
+}
+@keyframes buildStepIn {
+  from { opacity: 0; transform: translateX(-24px); clip-path: inset(0 100% 0 0); }
+  to   { opacity: 1; transform: translateX(0); clip-path: inset(0 0 0 0); }
+}
+
+/* ── SLIDE 9: Closing — cinematic reveal ────────────────────── */
+.slide[data-transition="closing"].play-animations .title-xl {
+  animation: closingTitleIn 1.2s var(--ease-out) 0.2s forwards;
+}
+.slide[data-transition="closing"].play-animations .subtitle {
+  animation: fadeUp 0.9s var(--ease-out) 0.55s forwards;
+}
+.slide[data-transition="closing"].play-animations .cta-line {
+  animation: closingCtaIn 0.8s var(--ease-out) 0.9s forwards;
+}
+.slide[data-transition="closing"].play-animations .phone-mockup.tilted {
+  animation: closingPhoneIn 1.1s var(--ease-spring) 1s forwards;
+}
+.slide[data-transition="closing"].play-animations .logo {
+  animation: closingLogoIn 0.9s var(--ease-out) 1.5s forwards;
+}
+
+@keyframes closingTitleIn {
+  from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes closingCtaIn {
+  from { opacity: 0; letter-spacing: 0.1em; }
+  to   { opacity: 1; letter-spacing: normal; }
+}
+@keyframes closingPhoneIn {
+  from { opacity: 0; transform: rotate(-8deg) scale(0.8) translateY(50px); }
+  to   { opacity: 1; transform: rotate(-8deg) scale(1) translateY(0); }
+}
+@keyframes closingLogoIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 0.9; transform: translateY(0); }
+}
+
+/* ── Shared utilities ───────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Ambient motion (after element choreography completes) ──── */
+.slide.ambient-active[data-transition="hook"] .search-bar {
+  animation: searchGlowPulse 3s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="hook"] .blur-card:nth-child(1) {
+  animation: floatDrift1 7s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="hook"] .blur-card:nth-child(2) {
+  animation: floatDrift2 8s ease-in-out infinite 0.5s;
+}
+.slide.ambient-active[data-transition="hook"] .blur-card:nth-child(3) {
+  animation: floatDrift3 6.5s ease-in-out infinite 1s;
+}
+.slide.ambient-active[data-transition="hook"] .blur-card:nth-child(4) {
+  animation: floatDrift4 7.5s ease-in-out infinite 1.5s;
+}
+
+.slide.ambient-active[data-transition="timeline"] .step-icon {
+  animation: iconPulse 4s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="timeline"] .step-connector span::after {
+  animation: connectorDot 2.5s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="timeline"] .step-card:nth-child(1) {
+  animation: cardBob 5s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="timeline"] .step-card:nth-child(3) {
+  animation: cardBob 5s ease-in-out infinite 0.8s;
+}
+.slide.ambient-active[data-transition="timeline"] .step-card:nth-child(5) {
+  animation: cardBob 5s ease-in-out infinite 1.6s;
+}
+
+.slide.ambient-active[data-transition="doubt"] .thought-pill:nth-child(1) {
+  animation: pillFloat1 5s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="doubt"] .thought-pill:nth-child(2) {
+  animation: pillFloat2 6s ease-in-out infinite 0.4s;
+}
+.slide.ambient-active[data-transition="doubt"] .thought-pill:nth-child(3) {
+  animation: pillFloat3 5.5s ease-in-out infinite 0.8s;
+}
+.slide.ambient-active[data-transition="doubt"] .thought-pill:nth-child(4) {
+  animation: pillFloat4 6.5s ease-in-out infinite 1.2s;
+}
+.slide.ambient-active[data-transition="doubt"] .doubt-tag {
+  animation: tagPulse 4s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="doubt"] .phone-mockup {
+  animation: phoneSway 8s ease-in-out infinite;
+}
+
+.slide.ambient-active[data-transition="questions"] .question-card:nth-child(1) {
+  animation: cardBob 6s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="questions"] .question-card:nth-child(2) {
+  animation: cardBob 6s ease-in-out infinite 0.5s;
+}
+.slide.ambient-active[data-transition="questions"] .question-card:nth-child(3) {
+  animation: cardBob 6s ease-in-out infinite 1s;
+}
+.slide.ambient-active[data-transition="questions"] .question-card:nth-child(4) {
+  animation: cardBob 6s ease-in-out infinite 1.5s;
+}
+
+.slide.ambient-active[data-transition="vision"] .wf-hero,
+.slide.ambient-active[data-transition="vision"] .wf-nav,
+.slide.ambient-active[data-transition="vision"] .wf-cards div {
+  animation: wireframePulse 2.5s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="vision"] .tag {
+  animation: tagGlow 4s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="vision"] .tag:nth-child(2) { animation-delay: 0.5s; }
+.slide.ambient-active[data-transition="vision"] .tag:nth-child(3) { animation-delay: 1s; }
+.slide.ambient-active[data-transition="vision"] .tag:nth-child(4) { animation-delay: 1.5s; }
+
+.slide.ambient-active[data-transition="compare"] .compare-divider span {
+  animation: dividerPulse 3s ease-in-out infinite;
+}
+
+.slide.ambient-active[data-transition="glass"] .glass-card {
+  animation: glassFloat 7s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="glass"] .glass-card:nth-child(2) { animation-delay: 0.6s; }
+.slide.ambient-active[data-transition="glass"] .glass-card:nth-child(3) { animation-delay: 1.2s; }
+.slide.ambient-active[data-transition="glass"] .glass-card:nth-child(4) { animation-delay: 1.8s; }
+.slide.ambient-active[data-transition="glass"] .glass-card:nth-child(5) { animation-delay: 2.4s; }
+.slide.ambient-active[data-transition="glass"] .glass-card:nth-child(6) { animation-delay: 3s; }
+.slide.ambient-active[data-transition="glass"] .icon-wrap {
+  animation: iconPulse 4s ease-in-out infinite;
+}
+
+.slide.ambient-active[data-transition="build"] .build-block.pending {
+  animation: pendingPulse 2.5s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="build"] .p-num {
+  animation: iconPulse 3.5s ease-in-out infinite;
+}
+
+.slide.ambient-active[data-transition="closing"] .phone-mockup.tilted {
+  animation: closingPhoneFloat 6s ease-in-out infinite;
+}
+.slide.ambient-active[data-transition="closing"] .cta-line {
+  animation: ctaShimmer 3s ease-in-out infinite;
+}
+
+@keyframes searchGlowPulse {
+  0%, 100% { box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(29,240,106,0.06), inset 0 1px 0 rgba(255,255,255,0.05); }
+  50%      { box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 24px rgba(29,240,106,0.12), inset 0 1px 0 rgba(255,255,255,0.05); }
+}
+@keyframes floatDrift1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(6px, -10px) rotate(1deg); }
+}
+@keyframes floatDrift2 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(-8px, 6px); }
+}
+@keyframes floatDrift3 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(5px, 8px); }
+}
+@keyframes floatDrift4 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(-6px, -5px) rotate(-1deg); }
+}
+@keyframes iconPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(29,240,106,0); }
+  50%      { box-shadow: 0 0 16px rgba(29,240,106,0.15); }
+}
+@keyframes connectorDot {
+  0%, 100% { opacity: 0.4; transform: translateY(-50%) scale(1); }
+  50%      { opacity: 1; transform: translateY(-50%) scale(1.4); }
+}
+@keyframes cardBob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+@keyframes pillFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(4px, -6px); }
+}
+@keyframes pillFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(-5px, 4px); }
+}
+@keyframes pillFloat3 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(6px, 5px); }
+}
+@keyframes pillFloat4 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(-4px, -4px); }
+}
+@keyframes tagPulse {
+  0%, 100% { transform: scale(1); border-color: rgba(255,255,255,0.09); }
+  50%      { transform: scale(1.02); border-color: rgba(255,255,255,0.14); }
+}
+@keyframes phoneSway {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50%      { transform: rotate(1deg) translateY(-4px); }
+}
+@keyframes wireframePulse {
+  0%, 100% { border-color: rgba(255,255,255,0.1); }
+  50%      { border-color: rgba(29,240,106,0.25); }
+}
+@keyframes tagGlow {
+  0%, 100% { border-color: rgba(29,240,106,0.25); background: rgba(29,240,106,0.08); }
+  50%      { border-color: rgba(29,240,106,0.45); background: rgba(29,240,106,0.12); }
+}
+@keyframes dividerPulse {
+  0%, 100% { opacity: 0.4; filter: brightness(1); }
+  50%      { opacity: 0.8; filter: brightness(1.3); }
+}
+@keyframes glassFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+@keyframes pendingPulse {
+  0%, 100% { border-color: rgba(255,255,255,0.1); opacity: 0.5; }
+  50%      { border-color: rgba(29,240,106,0.3); opacity: 0.75; }
+}
+@keyframes closingPhoneFloat {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50%      { transform: rotate(-6deg) translateY(-8px); }
+}
+@keyframes ctaShimmer {
+  0%, 100% { opacity: 1; text-shadow: 0 0 0 transparent; }
+  50%      { opacity: 1; text-shadow: 0 0 20px rgba(29,240,106,0.4); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .slide, .slide * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+  }
+}

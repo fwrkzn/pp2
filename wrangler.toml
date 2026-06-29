@@ -1,0 +1,7 @@
+name = "pitchpp2"
+compatibility_date = "2024-06-01"
+
+# Only deploy the built static deck — never the full repo / node_modules
+[assets]
+directory = "./public"
+not_found_handling = "single-page-application"

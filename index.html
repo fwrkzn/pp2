@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zerosix, première impression en ligne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/deck.css">
+  <link rel="stylesheet" href="css/transitions.css">
+</head>
+<body>
+  <div id="deck" class="deck">
+    <!-- Slide 1 -->
+    <section class="slide is-active" data-slide="1" data-transition="hook">
+      <div class="slide-inner slide-hook">
+        <div class="hook-copy">
+          <h1 class="title-xl anim" data-delay="0">Si un client entend parler de vous aujourd'hui,<br>que trouve-t-il ?</h1>
+          <p class="subtitle anim" data-delay="200">Avant d'appeler, beaucoup de clients vérifient en ligne.<br>Ce qu'ils trouvent, ou ne trouvent pas, influence déjà leur niveau de confiance.</p>
+        </div>
+        <div class="visual-center">
+          <div class="blur-cards">
+            <div class="blur-card anim" data-delay="900"><span></span><span></span></div>
+            <div class="blur-card anim" data-delay="1100"><span></span></div>
+            <div class="blur-card anim" data-delay="1300"><span></span><span></span></div>
+            <div class="blur-card anim" data-delay="1500"><span></span></div>
+          </div>
+          <div class="search-bar anim" data-delay="700">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <span class="search-text">Votre entreprise<span class="cursor-blink">|</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide" data-slide="2" data-transition="timeline">
+      <div class="slide-inner">
+        <h2 class="title anim" data-delay="0">Le premier contact commence souvent<br>avant le premier appel.</h2>
+        <p class="subtitle anim" data-delay="150">Aujourd'hui, un client veut comprendre rapidement qui vous êtes, ce que vous faites, et s'il peut vous faire confiance.</p>
+        <div class="timeline">
+          <div class="step-card anim" data-delay="400">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8.5a6 6 0 1 1 12 0c0 3-2 4-2 6.5"/><path d="M10 17a2 2 0 0 0 4 0"/></svg>
+            </div>
+            <span class="step-num">01</span>
+            <p>Il entend<br>parler de vous</p>
+          </div>
+          <div class="step-connector anim" data-delay="600"><span></span></div>
+          <div class="step-card anim" data-delay="700">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </div>
+            <span class="step-num">02</span>
+            <p>Il vous<br>cherche</p>
+          </div>
+          <div class="step-connector anim" data-delay="900"><span></span></div>
+          <div class="step-card anim" data-delay="1000">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <span class="step-num">03</span>
+            <p>Il décide s'il<br>vous contacte</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide" data-slide="3" data-transition="doubt">
+      <div class="slide-inner split-visual">
+        <div class="text-col">
+          <h2 class="title anim" data-delay="0">Quand il ne trouve rien de clair,<br>le doute s'installe.</h2>
+          <p class="subtitle anim" data-delay="150">Le client ne pense pas forcément que l'entreprise est mauvaise.<br>Il pense simplement : <em>« Je ne sais pas assez. »</em></p>
+        </div>
+        <div class="visual-col">
+          <div class="doubt-scene">
+            <div class="phone-mockup empty anim" data-delay="400">
+              <div class="phone-notch"></div>
+              <div class="phone-search-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="6"/><path d="m18 18-3-3"/></svg>
+                <span>Votre entreprise</span>
+              </div>
+              <div class="phone-result-empty">
+                <div class="empty-line"></div>
+                <div class="empty-line short"></div>
+                <p>Aucun résultat clair</p>
+              </div>
+            </div>
+            <div class="doubt-tag anim" data-delay="800">doute</div>
+            <div class="thought-pills">
+              <span class="thought-pill anim" data-delay="1000">Pas assez d'infos</span>
+              <span class="thought-pill anim" data-delay="1200">Pas de photos</span>
+              <span class="thought-pill anim" data-delay="1400">Pas de preuve</span>
+              <span class="thought-pill anim" data-delay="1600">Pas clair</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide" data-slide="4" data-transition="questions">
+      <div class="slide-inner slide-questions">
+        <div class="questions-header">
+          <h2 class="title anim" data-delay="0">Un bon site ne sert pas à faire joli.<br>Il sert à rassurer.</h2>
+          <p class="subtitle anim" data-delay="150">En quelques secondes, il doit répondre aux questions que le client se pose déjà.</p>
+        </div>
+        <div class="grid-2x2">
+          <div class="question-card anim" data-delay="350">
+            <div class="q-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+            <span>Qui êtes-vous ?</span>
+          </div>
+          <div class="question-card anim" data-delay="500">
+            <div class="q-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg></div>
+            <span>Que proposez-vous ?</span>
+          </div>
+          <div class="question-card anim" data-delay="650">
+            <div class="q-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.1L12 17l-5.5 2.4 1-6.1L3 8.9 9 8z"/></svg></div>
+            <span>Pourquoi vous faire confiance ?</span>
+          </div>
+          <div class="question-card anim" data-delay="800">
+            <div class="q-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16v12H4z"/><path d="m4 6 8 7 8-7"/></svg></div>
+            <span>Comment vous contacter ?</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide" data-slide="5" data-transition="vision">
+      <div class="slide-inner slide-vision">
+        <h2 class="title anim" data-delay="0">On ne construit pas juste un site.<br>On construit une première impression.</h2>
+        <p class="subtitle anim" data-delay="150">Votre site doit rendre votre activité claire, crédible et facile à contacter.</p>
+        <div class="mockup-stage">
+          <div class="mockup-cluster">
+            <div class="laptop-mockup">
+              <div class="laptop-screen">
+                <div class="site-preview wireframe-layer">
+                  <div class="wf-nav"></div>
+                  <div class="wf-hero"></div>
+                  <div class="wf-btn"></div>
+                  <div class="wf-cards"><div></div><div></div><div></div></div>
+                </div>
+                <div class="site-preview final-layer">
+                  <div class="site-nav"><span class="site-logo-dot"></span><span>Entreprise</span><button>Contact</button></div>
+                  <div class="site-hero"><h3>Votre activité, clairement.</h3><p>Des services pensés pour vos clients.</p><button class="cta">Nous contacter</button></div>
+                  <div class="site-cards"><div><strong>Service 1</strong></div><div><strong>Service 2</strong></div><div><strong>Service 3</strong></div></div>
+                </div>
+              </div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="phone-mockup small premium">
+              <div class="phone-notch"></div>
+              <div class="phone-hero-mini"></div>
+              <div class="phone-cards-mini"><div></div><div></div></div>
+              <button class="phone-cta-mini">Contact</button>
+            </div>
+          </div>
+          <div class="value-tags">
+            <span class="tag anim" data-delay="1200">Clarté</span>
+            <span class="tag anim" data-delay="1350">Confiance</span>
+            <span class="tag anim" data-delay="1500">Crédibilité</span>
+            <span class="tag anim" data-delay="1650">Contact</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide" data-slide="6" data-transition="compare">
+      <div class="slide-inner slide-compare">
+        <h2 class="title center anim" data-delay="0">Même entreprise. Perception différente.</h2>
+        <div class="compare">
+          <div class="compare-panel before">
+            <div class="panel-badge anim" data-delay="300">Avant</div>
+            <ul>
+              <li class="anim" data-delay="500">Le client entend parler de vous.</li>
+              <li class="anim" data-delay="650">Il cherche.</li>
+              <li class="anim" data-delay="800">Il ne trouve pas assez.</li>
+              <li class="anim" data-delay="950">Il hésite.</li>
+            </ul>
+            <div class="compare-device ghost-device anim" data-delay="1100">
+              <div class="device-bar muted"></div>
+              <div class="device-body">
+                <div class="sk-line"></div>
+                <div class="sk-line short"></div>
+                <div class="sk-box"></div>
+              </div>
+            </div>
+          </div>
+          <div class="compare-divider anim" data-delay="1400"><span></span></div>
+          <div class="compare-panel after">
+            <div class="panel-badge anim" data-delay="1600">Après</div>
+            <ul>
+              <li class="anim" data-delay="1800">Il cherche.</li>
+              <li class="anim" data-delay="1950">Il comprend.</li>
+              <li class="anim" data-delay="2100">Il est rassuré.</li>
+              <li class="anim" data-delay="2250">Il vous contacte.</li>
+            </ul>
+            <div class="compare-device premium-device anim" data-delay="2400">
+              <div class="device-bar"><span class="dot"></span><span class="brand">Entreprise</span><span class="pill">Contact</span></div>
+              <div class="device-body">
+                <div class="hero-line"></div>
+                <div class="sub-line"></div>
+                <div class="cta-pill"></div>
+                <div class="card-row"><div></div><div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide" data-slide="7" data-transition="glass">
+      <div class="slide-inner slide-glass">
+        <h2 class="title anim" data-delay="0">Une présence simple, premium et utile.</h2>
+        <p class="subtitle anim" data-delay="150">Pas besoin d'un site compliqué. Il faut un site qui inspire confiance et guide le client vers l'action.</p>
+        <div class="glass-grid">
+          <div class="glass-card anim" data-delay="300">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/></svg></div>
+            <span>Image professionnelle</span>
+          </div>
+          <div class="glass-card anim" data-delay="450">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16v10H7l-3 3z"/></svg></div>
+            <span>Message clair</span>
+          </div>
+          <div class="glass-card anim" data-delay="600">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="3" width="10" height="18" rx="2"/></svg></div>
+            <span>Design mobile-first</span>
+          </div>
+          <div class="glass-card anim" data-delay="750">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <span>Preuves de confiance</span>
+          </div>
+          <div class="glass-card anim" data-delay="900">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+            <span>Appels à l'action</span>
+          </div>
+          <div class="glass-card anim" data-delay="1050">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4h4l2 5-3 2c1.5 3 4 5.5 7 7l2-3 5 2v4c0 1-1 2-2 2C9 19 5 15 4 8c0-1 1-2 2-2z"/></svg></div>
+            <span>Contact facile</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8 -->
+    <section class="slide" data-slide="8" data-transition="build">
+      <div class="slide-inner split-visual slide-build">
+        <div class="text-col wide">
+          <h2 class="title anim" data-delay="0">On commence par vous montrer,<br>pas par vous convaincre.</h2>
+          <p class="subtitle anim" data-delay="150">Avant de parler d'un projet complet, on peut préparer une première maquette.<br>Vous voyez concrètement à quoi votre présence en ligne pourrait ressembler.<br>Ensuite seulement, vous décidez si ça vaut la peine d'aller plus loin.</p>
+          <div class="process-steps">
+            <div class="process-step anim" data-delay="500"><span class="p-num">1</span><span>On comprend votre activité</span></div>
+            <div class="process-step anim" data-delay="700"><span class="p-num">2</span><span>On crée une première direction visuelle</span></div>
+            <div class="process-step anim" data-delay="900"><span class="p-num">3</span><span>Vous décidez si on continue</span></div>
+          </div>
+        </div>
+        <div class="visual-col">
+          <div class="browser-mockup">
+            <div class="browser-chrome">
+              <span></span><span></span><span></span>
+              <div class="url-bar">maquette.zerosix.be</div>
+            </div>
+            <div class="browser-canvas">
+              <div class="build-block header done anim" data-delay="600"></div>
+              <div class="build-block hero done anim" data-delay="800"></div>
+              <div class="build-block text done anim" data-delay="1000"></div>
+              <div class="build-block card pending anim" data-delay="1200"></div>
+              <div class="build-block card pending anim" data-delay="1400"></div>
+              <div class="build-block cta pending anim" data-delay="1600"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9 -->
+    <section class="slide" data-slide="9" data-transition="closing">
+      <div class="slide-inner closing">
+        <div class="closing-text">
+          <h1 class="title-xl anim" data-delay="0">Votre entreprise existe déjà.<br>Notre travail, c'est de la rendre évidente en ligne.</h1>
+          <p class="subtitle anim" data-delay="300">Quand quelqu'un vous cherche, il doit comprendre en quelques secondes pourquoi il peut vous faire confiance.</p>
+          <p class="cta-line anim" data-delay="600">Zerosix, sites premium pour entreprises ambitieuses</p>
+          <img src="assets/logosite.webp" alt="Zerosix" class="logo anim" data-delay="1000">
+        </div>
+        <div class="closing-visual">
+          <div class="phone-mockup tilted premium">
+            <div class="phone-notch"></div>
+            <div class="phone-hero-mini"></div>
+            <div class="phone-cards-mini"><div></div><div></div></div>
+            <button class="phone-cta-mini">Contact</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <button id="fullscreen" class="fullscreen-btn" aria-label="Plein écran">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+  </button>
+
+  <script src="js/deck.js"></script>
+</body>
+</html>
