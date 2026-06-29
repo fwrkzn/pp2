@@ -34,13 +34,7 @@ Build copies only `index.html`, `css/`, `js/`, `assets/` → `public/` (~112 KB)
 | **Deploy command** | `npx wrangler deploy` |
 | **Output directory** | `public` |
 
-**Git remote:** *(set your second repo — see below)*
-
-```bash
-cd pp2
-git remote add origin https://github.com/fwrkzn/YOUR-REPO.git
-git push -u origin main
-```
+**Git remote:** `https://github.com/fwrkzn/pp2.git`
 
 **Cloudflare Workers:** `wrangler.toml` sets `assets.directory = "./public"` — fixes the 121 MiB `node_modules` upload error.
 
