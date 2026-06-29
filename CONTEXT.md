@@ -2,13 +2,13 @@
 
 ## Overview
 
-Premium consultative pitch deck for **Zerosix** (agency targeting clients without a website).  
+Premium consultative pitch deck for **Zerosix** (agency targeting clients **who already have a website**).  
 **Primary deliverable:** full-screen web deck in the browser (PowerPoint-style), not a `.pptx` file.
 
 - **Language:** French
 - **Tone:** consultative, elegant, Apple/Keynote-inspired
-- **Slides:** 9
-- **Style:** black / white / gray + accent green `#1DF06A`
+- **Slides:** 10
+- **Style:** black / white / gray + accent green `#1DF06A` (same system as pp1)
 
 ---
 
@@ -50,11 +50,11 @@ Build copies only `index.html`, `css/`, `js/`, `assets/` → `public/` (~112 KB)
 
 | File | Role |
 |------|------|
-| `index.html` | 9 slides, French copy, `data-transition` per slide |
+| `index.html` | 10 slides, French copy, `data-transition` per slide |
 | `css/deck.css` | Layout, typography, mockups, glass cards, responsive |
 | `css/transitions.css` | Page enter transitions, element choreography, ambient motion |
 | `js/deck.js` | Navigation, fullscreen, hash sync, transition orchestration |
-| `assets/logosite.webp` | Zerosix logo (slide 9) |
+| `assets/logosite.webp` | Zerosix logo (slide 10) |
 | `assets/logo.svg` | Logo SVG asset |
 
 ### Legacy / optional (ignore for web deck)
@@ -71,15 +71,16 @@ Build copies only `index.html`, `css/`, `js/`, `assets/` → `public/` (~112 KB)
 
 | # | `data-transition` | Title / theme |
 |---|-------------------|---------------|
-| 1 | `hook` | Search hook — "Si un client entend parler de vous..." |
-| 2 | `timeline` | 3-step journey (entend → cherche → décide) |
-| 3 | `doubt` | Empty search / doubt installs |
-| 4 | `questions` | 2×2 white cards — site must reassure |
-| 5 | `vision` | Laptop wireframe → final design + mobile + tags |
-| 6 | `compare` | Avant / Après split panels |
-| 7 | `glass` | 6 glassmorphism feature cards |
-| 8 | `build` | Process steps + browser mockup building |
-| 9 | `closing` | CTA, logo, tilted phone |
+| 1 | `hook` | Avoir un site ne suffit plus — convaincre en quelques secondes |
+| 2 | `timeline` | Compris rapidement (qui / quoi / pourquoi) |
+| 3 | `doubt` | Confiance — avis, preuves, image pro |
+| 4 | `compare` | Choix évident vs concurrents (Ailleurs / Chez vous) |
+| 5 | `questions` | Convertir — appel, devis, réservation, contact |
+| 6 | `build` | Sur mesure, pas un template |
+| 7 | `vision` | Mobile-first — grand mockup téléphone |
+| 8 | `compare` | ADN conservé, perception améliorée (Avant / Après) |
+| 9 | `timeline` | Méthode — Audit → Maquette → Site sur mesure |
+| 10 | `closing` | CTA, logo, téléphone |
 
 ---
 
@@ -88,7 +89,7 @@ Build copies only `index.html`, `css/`, `js/`, `assets/` → `public/` (~112 KB)
 - **Visible UI:** fullscreen button only (top-right)
 - **Fullscreen:** button click or `F` key
 - **Navigate:** arrow keys, space, Page Up/Down, click zones (left/right third), swipe, mouse wheel
-- **Hash sync:** `#1` … `#9` in URL
+- **Hash sync:** `#1` … `#10` in URL
 - **No** nav arrows, progress bar, or slide counter in UI
 
 ---

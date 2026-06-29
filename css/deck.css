@@ -924,6 +924,49 @@ html, body {
 .fullscreen-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.2); }
 .fullscreen-btn svg { width: 18px; height: 18px; }
 
+/* pp2: centered subtitle on compare slides */
+.subtitle.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 52ch;
+}
+
+/* pp2: trust row on phone mockup */
+.phone-trust-row {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 10px;
+}
+.phone-trust-row .star {
+  font-size: 0.55rem;
+  color: var(--green);
+  line-height: 1;
+}
+
+/* pp2: mobile-first slide — large phone */
+.phone-mockup.large {
+  width: 200px;
+  box-shadow: 0 28px 70px rgba(0,0,0,0.55);
+}
+.mockup-mobile-focus {
+  justify-content: center;
+  width: 100%;
+}
+.mockup-mobile-focus .phone-mockup.large {
+  margin: 0 auto;
+}
+
+/* pp2: completed build blocks */
+.build-block.done {
+  background: #2c2c2e;
+  border: none;
+}
+.build-block.cta.done {
+  background: var(--green);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .split-visual, .closing { flex-direction: column !important; }
@@ -939,6 +982,7 @@ html, body {
   .mockup-stage { flex-direction: column; gap: 1.5rem; }
   .value-tags { flex-direction: row; flex-wrap: wrap; justify-content: center; }
   .phone-mockup.tilted { transform: none; }
+  .phone-mockup.large { width: 168px; }
   .thought-pill { font-size: 0.6rem; }
 }
 
