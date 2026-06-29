@@ -78,7 +78,7 @@
   }
 
   function updateTitle() {
-    document.title = `Zerosix, site qui convertit — slide ${current + 1}/${total}`;
+    document.title = `Zerosix, site qui convertit · slide ${current + 1}/${total}`;
   }
 
   function goTo(index, direction = 1) {
