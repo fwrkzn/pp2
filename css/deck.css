@@ -377,6 +377,15 @@ html, body {
 .thought-pill:nth-child(3) { bottom: 28%; left: -4%; }
 .thought-pill:nth-child(4) { bottom: 8%; right: 4%; }
 
+/* Slide 5 — conversion */
+.slide-funnel {
+  justify-content: center;
+  gap: 1.25rem;
+}
+.slide-funnel .ed-head {
+  margin-top: clamp(1.25rem, 3.5vh, 2.5rem);
+}
+
 /* Slide 4: Questions */
 .slide-questions {
   justify-content: center;
@@ -1183,17 +1192,25 @@ html, body {
 .mobile-point .mp-ic svg { width: 18px; height: 18px; }
 
 /* Slide 8 — identity (garder / améliorer) */
-.identity { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; flex: 1; align-items: center; max-width: 860px; width: 100%; align-self: center; }
-.id-col { background: rgba(28,28,30,0.5); border: 1px solid var(--glass-border); border-radius: 18px; padding: 1.6rem; height: 100%; }
+.slide-identity {
+  justify-content: center;
+  gap: 1.5rem;
+}
+.slide-identity .identity {
+  flex: 0 0 auto;
+  align-items: stretch;
+}
+.identity { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; max-width: 860px; width: 100%; align-self: center; }
+.id-col { background: rgba(28,28,30,0.5); border: 1px solid var(--glass-border); border-radius: 18px; padding: 1.2rem 1.35rem; height: auto; }
 .id-col.improve { background: linear-gradient(160deg, rgba(29,240,106,0.05), rgba(28,28,30,0.8)); border-color: rgba(29,240,106,0.18); }
-.id-col h4 { font-size: 1rem; margin-bottom: 1.1rem; display: flex; align-items: center; gap: 0.55rem; }
+.id-col h4 { font-size: 1rem; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.55rem; }
 .id-col.keep h4 { color: var(--gray-light); }
 .id-col.improve h4 { color: var(--green); }
 .id-col h4 .id-dot { width: 8px; height: 8px; border-radius: 50%; }
 .id-col.keep .id-dot { background: var(--gray-mid); }
 .id-col.improve .id-dot { background: var(--green); }
-.id-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-.id-list li { font-size: 0.86rem; color: var(--gray-light); padding-left: 1.1rem; position: relative; line-height: 1.4; }
+.id-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.id-list li { font-size: 0.86rem; color: var(--gray-light); padding-left: 1.1rem; position: relative; line-height: 1.35; }
 .id-list li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 5px; height: 5px; border-radius: 50%; }
 .id-col.keep .id-list li::before { background: var(--gray-mid); opacity: 0.6; }
 .id-col.improve .id-list li::before { background: var(--green); }

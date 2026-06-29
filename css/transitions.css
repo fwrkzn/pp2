@@ -100,6 +100,15 @@
   to   { stroke-dashoffset: 95; }
 }
 
+/* Slide 8 — staggered identity reveal */
+.slide[data-slide="8"] .id-col > .anim,
+.slide[data-slide="8"] .id-list .anim {
+  animation-duration: 0.5s;
+}
+.slide[data-slide="8"] .id-col.anim {
+  animation-duration: 0.55s;
+}
+
 /* Safety net: once entrance is done, keep .anim elements visible even if an
    ambient animation replaces the entrance animation's fill. */
 .slide.ambient-active .anim { opacity: 1; }
